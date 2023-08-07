@@ -1,0 +1,21 @@
+#+title: Custom Chrome Extension
+
+[[./ext/icons/icon_512.png][Icon]]
+
+* Scripts
+
+** Icon Creation Process
+
+1. Generated icon with [[https://www.iconikai.com][iconikai]]
+2. Upscaled image with [[https://www.upscale.media/upload][upscale.media]]
+3. Removed background and added shadow with [[https://www.photopea.com/][Photopea]]
+
+** Create icons from PSD
+
+#+begin_src sh :dir ./ext/icons :silent t :results none
+for size in 16 32 48 128 512; do
+    filename=icon_${size}.png
+    rm -rf $filename
+    convert icon.psd[0] -resize ${size}x${size} $filename
+done
+#+end_src

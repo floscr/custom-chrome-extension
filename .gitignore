@@ -1,0 +1,14 @@
+.cache
+.shadow-cljs
+.lein-*
+.nrepl-*
+/projects/server/log
+.cpcache/
+
+node_modules/
+public/js
+
+/target
+/checkouts
+/src/gen
+/ext/js
