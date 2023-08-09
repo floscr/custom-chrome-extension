@@ -1,17 +1,14 @@
 (ns ext.lib.tabs
   (:require
-   [promesa.core :as p]))
+   [promesa.core :as p]
+   [ext.lib.chrome :as chrome]))
 
 (defn close-non-selected! []
-  (p/let [current-window (js/chrome.windows.getCurrent)
-          tabs (js/chrome.tabs.query #js {:active false
-                                          :pinned false
-                                          :windowId (.-id current-window)})]
+  (p/let [tabs (chrome/current-window-tabs+ {:active false
+                                             :pinned false})]
     (doseq [t tabs]
       (js/chrome.tabs.remove (.-id t)))))
 
 (defn pin-selected! []
-  (p/let [current-window (js/chrome.windows.getCurrent)
-          [tab] (js/chrome.tabs.query #js {:active true
-                                           :windowId (.-id current-window)})]
+  (p/let [[tab] (chrome/current-window-tabs+ {:active true})]
     (js/chrome.tabs.update (.-id tab) #js {:pinned (not ^js/bool (.-pinned tab))})))

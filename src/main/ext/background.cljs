@@ -5,10 +5,10 @@
 ;; Chrome Handlers -------------------------------------------------------------
 
 (defn on-command [command]
-  (js/console.log "command" command)
   (condp = command
     "close-other-tabs" (tabs/close-non-selected!)
-    "pin-tab" (tabs/pin-selected!)))
+    "pin-tab" (tabs/pin-selected!)
+    "kill-sticky" (tabs/pin-selected!)))
 
 ;; Main ------------------------------------------------------------------------
 
