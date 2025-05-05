@@ -1,6 +1,24 @@
-#+title: Custom Chrome Extension
+#+title: Custom Chrome Extension with Clojurescript
 
 [[./ext/icons/icon_512.png][Icon]]
+
+A chrome extension with custom scripts implemented in clojurescript to cut down on my extensions.
+
+* Development
+
+Run the extension with [[https://github.com/babashka/babashka][babashka]] via
+
+#+begin_src
+bb watch
+#+end_src
+
+And load the unpacked extension in your chromium based browser.
+
+To build it
+
+#+begin_src
+bb release
+#+end_src
 
 * Scripts
 
