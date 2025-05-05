@@ -8,7 +8,7 @@
   (condp = command
     "close-other-tabs" (tabs/close-non-selected!)
     "pin-tab" (tabs/pin-selected!)
-    "kill-sticky" (tabs/pin-selected!)))
+    "kill-sticky" (tabs/kill)))
 
 ;; Main ------------------------------------------------------------------------
 

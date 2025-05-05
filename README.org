@@ -1,6 +1,6 @@
 #+title: Custom Chrome Extension with Clojurescript
 
-[[file:ext/icons/icon_512.png][Icon]]
+[[file:ext/icons/icon_128.png]]
 
 A chrome extension with custom scripts implemented in clojurescript to cut down on my extensions.
 
